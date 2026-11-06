@@ -305,19 +305,213 @@ document.addEventListener("DOMContentLoaded", function () {
   // POPUP DETAIL PRODUK
   // =====================================
 
-  function showDetail(product) {
-    const modal = document.getElementById("productDetailModal");
+// =====================================
+// POPUP DETAIL PRODUK
+// =====================================
 
-    document.getElementById("modalProductBrand").textContent = product.brand;
-    document.getElementById("productModalTitle").textContent = product.name;
-    document.getElementById("modalProductDescription").textContent = product.desc;
+function showDetail(product) {
 
-    const img = document.getElementById("modalProductImage");
-    img.alt = product.name;
-    loadImage(img, product.folder, product.file);
+  const modal = document.getElementById("productDetailModal");
 
-    bootstrap.Modal.getOrCreateInstance(modal).show();
+  if (!modal || !window.bootstrap) {
+    console.error("Popup produk atau Bootstrap tidak ditemukan.");
+    return;
   }
+
+  const details = getProductDetails(product);
+
+  // Kategori produk
+  const categoryNames = {
+    masako: "Masako",
+    mayumi: "Mayumi",
+    sajiku: "Sajiku",
+    saori: "SAORI",
+    lainnya: "Produk Lainnya"
+  };
+
+  document.getElementById("modalProductCategory").textContent =
+    categoryNames[product.category] || "Produk";
+
+  // Nama dan deskripsi
+  document.getElementById("productModalTitle").textContent =
+    product.name;
+
+  document.getElementById("modalProductDescription").textContent =
+    product.desc;
+
+  // Informasi lengkap
+  document.getElementById("modalProductInfo").textContent =
+    details.info;
+
+  document.getElementById("modalProductFunction").textContent =
+    details.function;
+
+  document.getElementById("modalProductUsage").textContent =
+    details.usage;
+
+  // Gambar produk
+  const img = document.getElementById("modalProductImage");
+
+  img.alt = product.name;
+  loadImage(img, product.folder, product.file);
+
+  // Tampilkan popup
+  bootstrap.Modal.getOrCreateInstance(modal).show();
+}
+
+  
+// =====================================
+// DETAIL INFORMASI SETIAP PRODUK
+// =====================================
+
+function getProductDetails(product) {
+  const name = product.name.toLowerCase();
+
+  // MASAKO
+  if (product.category === "masako") {
+    return {
+      info: `${product.name} merupakan produk bumbu kaldu yang digunakan untuk membantu memberikan cita rasa pada berbagai masakan.`,
+
+      function: `Memberikan karakter rasa kaldu ${name.includes("ayam") ? "ayam" : name.includes("sapi") ? "sapi" : "jamur"} pada makanan sehingga hidangan terasa lebih kaya.`,
+
+      usage: "Dapat digunakan untuk memasak sup, tumisan, sayuran, dan berbagai hidangan lainnya. Gunakan sesuai petunjuk pada kemasan."
+    };
+  }
+
+  // MAYUMI
+  if (product.category === "mayumi") {
+    return {
+      info: `${product.name} merupakan produk saus mayones dengan karakter rasa ${name.includes("pedas") ? "pedas" : "gurih dan creamy"}.`,
+
+      function: "Digunakan sebagai pelengkap makanan untuk menambah rasa, tekstur, dan kelezatan hidangan.",
+
+      usage: "Dapat digunakan sebagai saus cocolan, pelengkap sandwich, salad, burger, dan berbagai makanan lainnya."
+    };
+  }
+
+  // SAJIKU
+  if (product.category === "sajiku") {
+
+    if (
+      name.includes("tepung") ||
+      name.includes("crispy") ||
+      name.includes("bakwan") ||
+      name.includes("tempe") ||
+      name.includes("pisang") ||
+      name.includes("golden")
+    ) {
+      return {
+        info: `${product.name} merupakan produk tepung bumbu praktis untuk membantu proses pengolahan makanan.`,
+
+        function: "Membantu memberikan lapisan dan cita rasa pada bahan makanan yang diolah.",
+
+        usage: "Digunakan untuk mengolah bahan makanan seperti ayam, tempe, pisang, atau sayuran sesuai jenis produknya. Ikuti petunjuk pencampuran pada kemasan."
+      };
+    }
+
+    if (name.includes("nasi goreng")) {
+      return {
+        info: `${product.name} merupakan bumbu praktis untuk membantu menyiapkan hidangan nasi goreng.`,
+
+        function: "Memberikan cita rasa dan bumbu pada nasi goreng sehingga proses memasak menjadi lebih praktis.",
+
+        usage: "Campurkan bumbu dengan nasi dan bahan pelengkap saat proses memasak. Sesuaikan penggunaannya dengan petunjuk pada kemasan."
+      };
+    }
+
+    return {
+      info: `${product.name} merupakan bumbu masakan praktis yang dirancang untuk membantu menyiapkan hidangan sesuai jenis masakannya.`,
+
+      function: "Membantu memberikan perpaduan rasa dan bumbu pada hidangan agar proses memasak lebih mudah.",
+
+      usage: "Dapat digunakan untuk menyiapkan hidangan sesuai nama produknya. Ikuti petunjuk penggunaan pada kemasan."
+    };
+  }
+
+  // SAORI
+  if (product.category === "saori") {
+    let jenis = "saus pelengkap masakan";
+
+    if (name.includes("tiram")) jenis = "saus tiram";
+    else if (name.includes("teriyaki")) jenis = "saus teriyaki";
+    else if (name.includes("mentega")) jenis = "saus mentega";
+    else if (name.includes("bulgogi")) jenis = "saus bulgogi";
+    else if (name.includes("asam manis")) jenis = "saus asam manis";
+    else if (name.includes("lada hitam")) jenis = "saus lada hitam";
+
+    return {
+      info: `${product.name} merupakan ${jenis} yang dapat digunakan sebagai bumbu dalam pengolahan berbagai hidangan.`,
+
+      function: "Membantu memberikan karakter rasa pada masakan dan mempermudah proses pemberian bumbu.",
+
+      usage: "Dapat digunakan untuk tumisan, olahan daging, ayam, seafood, dan berbagai masakan lainnya sesuai karakter saus."
+    };
+  }
+
+  // AJI-NO-MOTO ORIGINAL
+  if (name.includes("aji-no-moto original")) {
+    return {
+      info: "AJI-NO-MOTO Original merupakan produk penyedap rasa berbasis monosodium glutamate (MSG) yang dikenal untuk memberikan rasa umami.",
+
+      function: "Membantu memperkuat cita rasa gurih atau umami pada berbagai jenis masakan.",
+
+      usage: "Dapat ditambahkan pada sup, tumisan, sayuran, dan hidangan lainnya sesuai selera serta petunjuk kemasan."
+    };
+  }
+
+  // TERASI UDANG
+  if (name.includes("terasi")) {
+    return {
+      info: "Produk bumbu dengan karakter rasa terasi udang untuk melengkapi berbagai masakan.",
+
+      function: "Memberikan karakter rasa khas terasi udang pada hidangan.",
+
+      usage: "Dapat digunakan sebagai bumbu pelengkap dalam masakan sesuai petunjuk kemasan."
+    };
+  }
+
+  // AMINO VITAL
+  if (name.includes("amino vital")) {
+    return {
+      info: "Amino Vital merupakan produk dalam lini produk Amino Vital.",
+
+      function: "Informasi fungsi khusus dan kandungan produk mengikuti keterangan resmi pada kemasan masing-masing varian.",
+
+      usage: "Gunakan sesuai petunjuk konsumsi dan informasi pada kemasan produk."
+    };
+  }
+
+  // CHICKEN GYOZA
+  if (name.includes("gyoza")) {
+    return {
+      info: "Chicken Gyoza merupakan produk olahan gyoza dengan isian ayam.",
+
+      function: "Menjadi pilihan hidangan praktis yang dapat disajikan sebagai makanan utama maupun pelengkap.",
+
+      usage: "Olah dengan metode memasak yang tercantum pada kemasan produk sebelum disajikan."
+    };
+  }
+
+  // AJI-NO-MOTO PLUS
+  if (name.includes("plus")) {
+    return {
+      info: "AJI-NO-MOTO Plus merupakan varian produk penyedap rasa.",
+
+      function: "Digunakan untuk membantu memberikan cita rasa pada masakan.",
+
+      usage: "Gunakan sesuai informasi dan petunjuk penggunaan pada kemasan."
+    };
+  }
+
+  // INFORMASI UMUM
+  return {
+    info: product.desc,
+
+    function: "Digunakan untuk melengkapi kebutuhan pengolahan makanan sesuai karakter produk.",
+
+    usage: "Gunakan sesuai petunjuk penggunaan yang tercantum pada kemasan."
+  };
+}
 
   // =====================================
   // TAMPILKAN PRODUK

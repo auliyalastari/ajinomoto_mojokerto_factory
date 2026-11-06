@@ -3581,3 +3581,198 @@ section,
     background-color: #b9152d !important;
     color: #ffffff !important;
 }
+
+/* ==========================================
+   FINAL REVISION - WEBSITE AJINOMOTO
+   ========================================== */
+
+/* 1. TEKS JUSTIFY - TENTANG KAMI */
+.about-description {
+  text-align: justify !important;
+  text-justify: inter-word;
+  line-height: 1.8;
+}
+
+
+/* ==========================================
+   PERBAIKAN ALIGNMENT TEKS
+   ========================================== */
+
+/* Tentang Kami - paragraf utama tetap justify */
+.about-description {
+  text-align: justify !important;
+  line-height: 1.8;
+}
+
+/* Berorientasi pada Konsumen,
+   Mengutamakan Kualitas,
+   Tumbuh secara Berkelanjutan */
+.value-item p {
+  text-align: left !important;
+  text-justify: auto !important;
+  line-height: 1.6;
+  word-spacing: normal;
+}
+
+/* Kepedulian, Kualitas,
+   dan Keberlanjutan */
+.principle-card p {
+  text-align: left !important;
+  text-justify: auto !important;
+  line-height: 1.7;
+  word-spacing: normal;
+}
+
+/* 4. POPUP DETAIL PRODUK */
+.product-modal .modal-content {
+  border: 1px solid #f2dada;
+  border-radius: 20px;
+  overflow: hidden;
+  background: #ffffff;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+}
+
+.product-modal .modal-body {
+  padding: 35px;
+}
+
+.product-modal .modal-dialog {
+  max-width: 950px;
+}
+
+.product-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  z-index: 10;
+  width: 36px;
+  height: 36px;
+  border: none;
+  border-radius: 50%;
+  background: #fff0f1;
+  color: #d71920;
+  cursor: pointer;
+  transition: .3s;
+}
+
+.product-modal-close:hover {
+  background: #d71920;
+  color: #ffffff;
+}
+
+/* GAMBAR POPUP */
+.product-modal-image {
+  min-height: 300px;
+  padding: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #fff7f7;
+  border: 1px solid #f7e5e5;
+  border-radius: 15px;
+}
+
+.product-modal-image img {
+  width: 100%;
+  max-height: 340px;
+  object-fit: contain;
+}
+
+/* KATEGORI PRODUK */
+.product-modal-category {
+  display: inline-block;
+  padding: 6px 14px;
+  border-radius: 30px;
+  background: #fff0f1;
+  color: #d71920;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+/* JUDUL PRODUK */
+.product-modal h3 {
+  margin: 12px 0;
+  color: #252525;
+  font-family: Georgia, serif;
+  font-size: 29px;
+  font-weight: 700;
+}
+
+/* DESKRIPSI */
+.product-modal-description {
+  color: #777777;
+  font-size: 14px;
+  line-height: 1.7;
+  text-align: justify;
+}
+
+/* BAGIAN INFORMASI */
+.product-detail-section {
+  padding: 13px 0;
+  border-top: 1px solid #f0dddd;
+}
+
+.product-detail-section h4 {
+  margin-bottom: 7px;
+  color: #d71920;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.product-detail-section p {
+  margin: 0;
+  color: #626262;
+  font-size: 13px;
+  line-height: 1.8;
+  text-align: justify;
+}
+
+/* 5. RESPONSIVE POPUP */
+@media (max-width: 768px) {
+  .product-modal .modal-body {
+    padding: 22px;
+  }
+
+  .product-modal-image {
+    min-height: 220px;
+  }
+
+  .product-modal-image img {
+    max-height: 230px;
+  }
+
+  .product-modal h3 {
+    font-size: 24px;
+  }
+}
+/* JUSTIFY PARAGRAF SEJARAH */
+#sejarah.aj-history .history-heading p {
+    text-align: justify !important;
+    text-justify: inter-word;
+    line-height: 1.8;
+    max-width: 440px;
+}
+/* POSISI GAMBAR DEKORATIF SEJARAH */
+#sejarah .history-factory {
+    z-index: 0;
+    pointer-events: none;
+}
+
+#sejarah .history-heading {
+    position: relative;
+    z-index: 2;
+}
+/* Hilangkan tombol scroll to top */
+.scroll-top {
+    display: none !important;
+}
+/* FOOTER - HOVER LINK MERAH AJINOMOTO */
+footer a:hover,
+.footer a:hover,
+#footer a:hover,
+.footer-links a:hover {
+    color: #d71920 !important;
+    transition: color 0.3s ease;
+}

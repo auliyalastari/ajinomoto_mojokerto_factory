@@ -9,7 +9,7 @@
   <meta name="keywords" content="">
 
   <!-- Favicons -->
-  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/faviconnew.png" rel="icon">
   <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
 
   <!-- Fonts -->
@@ -57,8 +57,6 @@
         <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
       </nav>
 
-      <a class="btn-getstarted" href="#about">Get Started</a>
-
     </div>
   </header>
 
@@ -92,15 +90,10 @@
     </p>
 
     <div class="hero-actions">
-      <a href="#about" class="hero-btn-primary">
+      <a href="https://youtu.be/i88FsbpKXYw?si=tqiyVTmn_jNMyTrF" target="_blank" class="hero-btn-primary" >
         Jelajahi Kami
         <span></span>
       </a>
-
-    </div>
-
-    <div class="hero-caption">
-      QUALITY · INNOVATION · COMMITMENT
     </div>
 
   </div>
@@ -153,7 +146,7 @@
             </div>
             <div>
               <h4>Berorientasi pada Konsumen</h4>
-              <p>
+              <p> 
                 Memahami kebutuhan masyarakat dalam menghadirkan
                 produk yang relevan dan bermanfaat.
               </p>
@@ -223,7 +216,7 @@
 
           <div>
             <h3>Kepedulian</h3>
-            <p>
+            <p style="text-align: justify !important; display: block !important;">
               Selalu memahami kebutuhan konsumen dan menghadirkan
               produk yang bermanfaat dalam kehidupan sehari-hari.
             </p>
@@ -239,7 +232,7 @@
 
           <div>
             <h3>Kualitas</h3>
-            <p>
+            <p style="text-align: justify !important; display: block !important;">
               Menjaga mutu produk melalui proses yang terstandar
               dan perhatian pada keamanan pangan.
             </p>
@@ -255,7 +248,7 @@
 
           <div>
             <h3>Keberlanjutan</h3>
-            <p>
+            <p style="text-align: justify !important; display: block !important;">
               Berkomitmen terhadap lingkungan dan masyarakat
               untuk masa depan yang lebih baik.
             </p>
@@ -386,11 +379,12 @@
         </p>
       </div>
 
-      <div class="history-factory">
-        <img
-          src="assets/img/sejarah/pabrik-ajinomoto.jpg"
-          alt="Pabrik Ajinomoto Indonesia">
-      </div>
+     <div class="history-factory">
+    <img
+      src="assets/img/sejarah/pabrik-ajinomoto.jpg"
+      alt=""
+      onerror="this.style.display='none'">
+</div>
 
       <div class="history-slogan">
         <span>Lebih dari</span>
@@ -620,68 +614,74 @@
 <!-- /PRODUCT CATALOG SECTION -->
 
 
+
 <!-- MODAL DETAIL PRODUK -->
 <div class="modal fade product-modal"
-  id="productDetailModal"
-  tabindex="-1"
-  aria-labelledby="productModalTitle"
-  aria-hidden="true">
+     id="productDetailModal"
+     tabindex="-1"
+     aria-labelledby="productModalTitle"
+     aria-hidden="true">
 
   <div class="modal-dialog modal-dialog-centered modal-lg">
-
     <div class="modal-content">
 
       <button type="button"
-        class="product-modal-close"
-        data-bs-dismiss="modal"
-        aria-label="Tutup">
-
+              class="product-modal-close"
+              data-bs-dismiss="modal"
+              aria-label="Tutup">
         <i class="bi bi-x-lg"></i>
-
       </button>
 
       <div class="modal-body">
-
         <div class="row align-items-center g-4">
 
           <!-- GAMBAR PRODUK -->
           <div class="col-md-5">
-
             <div class="product-modal-image">
-
-              <img
-                id="modalProductImage"
-                src=""
-                alt="">
-
+              <img id="modalProductImage"
+                   src=""
+                   alt="">
             </div>
-
           </div>
 
-          <!-- INFORMASI PRODUK -->
+          <!-- INFORMASI DETAIL -->
           <div class="col-md-7">
 
-            <span
-              class="product-brand"
-              id="modalProductBrand">
+            <span class="product-modal-category"
+                  id="modalProductCategory">
             </span>
 
             <h3 id="productModalTitle"></h3>
 
-            <p id="modalProductDescription"></p>
+            <p class="product-modal-description"
+               id="modalProductDescription">
+            </p>
+
+            <div class="product-detail-section">
+              <h4>Informasi Produk</h4>
+              <p id="modalProductInfo"></p>
+            </div>
+
+            <div class="product-detail-section">
+              <h4>Fungsi dan Kegunaan</h4>
+              <p id="modalProductFunction"></p>
+            </div>
+
+            <div class="product-detail-section">
+              <h4>Cara Penggunaan</h4>
+              <p id="modalProductUsage"></p>
+            </div>
 
           </div>
 
         </div>
-
       </div>
 
     </div>
-
   </div>
-
 </div>
 <!-- /MODAL DETAIL PRODUK -->
+
 
 
 <!-- Team Section -->
@@ -890,7 +890,7 @@
           </a>
           <p>PT Ajinomoto Indonesia berkomitmen untuk memberikan kontribusi bagi kesehatan dan kehidupan yang lebih baik melalui kelezatan makanan serta inovasi produk berkualitas tinggi.</p>
             <div class="social-links d-flex mt-4">
-            <a href="https://id.linkedin.com/company/ajinomoto-indonesia" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
+            <a href="https://www.facebook.com/p/PT-Ajinomoto-Indonesia-61569009602354/" target="_blank" rel="noopener noreferrer"><i class="bi bi-facebook"></i></a>
             <a href="https://www.instagram.com/ajinomoto.indonesia" target="_blank" rel="noopener noreferrer"><i class="bi bi-instagram"></i></a>
             <a href="https://id.linkedin.com/company/ajinomoto-indonesia" target="_blank" rel="noopener noreferrer"><i class="bi bi-linkedin"></i></a>
           </div>
@@ -967,12 +967,8 @@
 
 
 
-  <!-- Main JS File -->
-  <script src="assets/js/main.js"></script>
-
-</body>
-</html>
+ <!-- Main JS File -->
 <script src="assets/js/main.js"></script>
+
 </body>
 </html>
-
